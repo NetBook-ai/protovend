@@ -25,7 +25,7 @@ use std::path::{Path, PathBuf};
 use walkdir::WalkDir;
 
 lazy_static! {
-    pub static ref PROTOS_OUTPUT_DIRECTORY: PathBuf = PathBuf::from("proto/vendor");
+    pub static ref PROTOS_OUTPUT_DIRECTORY: PathBuf = PathBuf::from("proto/protovend");
 }
 
 pub(super) fn vendor_import(import: &Import) -> Result<()> {
