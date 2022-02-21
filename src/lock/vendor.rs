@@ -53,10 +53,11 @@ pub(super) fn vendor_import(import: &Import) -> Result<()> {
 }
 
 pub(super) fn prepare_output_directory() -> Result<()> {
-    if !PROTOS_OUTPUT_DIRECTORY.exists() {
+    if PROTOS_OUTPUT_DIRECTORY.exists() {
         fs::remove_dir_all(PROTOS_OUTPUT_DIRECTORY.as_path())?;
-        fs::create_dir_all(PROTOS_OUTPUT_DIRECTORY.as_path())?;
     }
+
+    fs::create_dir_all(PROTOS_OUTPUT_DIRECTORY.as_path())?;
 
     Ok(())
 }
