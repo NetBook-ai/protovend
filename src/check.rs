@@ -53,6 +53,8 @@ pub fn run_checks<P: AsRef<Path>>(project_root: P, url: &GitUrl) -> Result<()> {
     let project_proto_dir = proto_root_folder.join(url.sanitised_path());
     let relative_proto_dir = project_proto_dir.strip_prefix(&proto_root_folder)?;
 
+    log::info!("proto file path : {:?}", project_proto_dir);
+
     log::info!("Running protovend checks..");
 
     let results: Vec<Result<Vec<CheckResult>>> = vec![
